@@ -27,4 +27,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-INSERT INTRODUCTION HERE
+THIS WEBSITE IS CURRENTLY BEING UPDATED
