@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrian Krieger - Project One</title>
+    <title>Adrian Krieger - OCR Optimization with RL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -37,77 +37,124 @@
             transition: transform 0.2s ease-in-out;
             border: 1px solid rgba(148, 163, 184, 0.2);
         }
-        .card:hover {
-            transform: translateY(-5px);
+        .section-header {
+            border-bottom: 2px solid #374151;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
         .text-themed-blue { color: #a5b4fc; }
-        .text-themed-green { color: #81e6d9; }
         .text-themed-purple { color: #c4b5fd; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 bg-slate-900 bg-opacity-60 backdrop-blur-md shadow-lg z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-2xl font-bold text-white">Adrian Krieger</a>
-            <div class="hidden md:flex space-x-6 text-gray-300 font-medium">
-                <a href="../index.html#about" class="nav-link">About</a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="#" class="nav-link">Github</a>
-                <a href="../index.html#cv-contact" class="nav-link">CV</a>
-                <a href="../index.html#cv-contact" class="nav-link">Contact</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 bg-opacity-60 backdrop-blur-md shadow-md">
-            <div class="flex flex-col items-center py-4 space-y-2 text-gray-300 font-medium">
-                <a href="../index.html#about" class="nav-link w-full text-center py-2 hover:bg-slate-800 transition-colors duration-200">About</a>
-                <a href="projects.html" class="nav-link w-full text-center py-2 hover:bg-slate-800 transition-colors duration-200">Projects</a>
-                <a href="#" class="nav-link w-full text-center py-2 hover:bg-slate-800 transition-colors duration-200">Github</a>
-                <a href="../index.html#cv-contact" class="nav-link w-full text-center py-2 hover:bg-slate-800 transition-colors duration-200">CV</a>
-                <a href="../index.html#cv-contact" class="nav-link w-full text-center py-2 hover:bg-slate-800 transition-colors duration-200">Contact</a>
-            </div>
-        </div>
-    </header>
-
     <main class="container mx-auto px-6 py-8 md:py-16">
-        <!-- Project 1 Details -->
-        <section id="project-one-details" class="py-12 md:py-20 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Project One Title</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-12">Subtitle or Short Tagline</p>
-            <div class="card p-6 rounded-xl max-w-4xl mx-auto">
-                <div class="mb-8">
-                    <img src="https://placehold.co/800x600/e0e7ff/334155?text=Project+One+Image" alt="Project 1 main image" class="w-full h-auto object-cover rounded-md mb-4">
-                    <p class="text-gray-300">
-                        This is where you'll put a detailed description of your project. Talk about the problem you were solving, your approach, the technologies you used (e.g., Python, React, MATLAB), and the results you achieved. You can include multiple paragraphs to explain the project in depth.
-                    </p>
+        <section id="project-three-details" class="py-12 md:py-20 text-center">
+            
+            <p class="text-lg font-medium text-themed-purple mb-2">Research Paper (Deep Learning & RL)</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Optimizing OCR Pipelines using Reinforcement Learning</h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-10">A deep reinforcement learning approach to automate document pre-processing and maximize recognition accuracy.</p>
+            
+            <div class="card p-8 rounded-xl max-w-5xl mx-auto text-left space-y-12">
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pb-4">
+                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">Reinforcement Learning (RL)</span>
+                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">OCR Automation</span>
+                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">Policy Gradient</span>
+                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">Pytorch/Python</span>
                 </div>
 
-                <div class="flex flex-wrap justify-center space-x-4 mb-8">
-                    <a href="#" class="text-themed-blue hover:text-blue-300 transition-colors duration-200 font-bold">View GitHub &rarr;</a>
+                <div class="flex flex-wrap justify-center md:justify-start space-x-6">
+                    <a href="assets/documents/ocrl-paper.pdf" target="_blank" class="text-themed-purple hover:text-purple-300 transition-colors duration-200 font-bold">Read Full Paper (PDF) &rarr;</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">View Code Repository &rarr;</a>
+                </div>
+                
+                
+                <div id="introduction">
+                    <h2 class="text-3xl font-bold text-white section-header">I. Introduction: Problem & Social Value</h2>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            Traditional Optical Character Recognition (OCR) systems rely on fixed, sequential pre-processing steps (e.g., de-skew, noise reduction, thresholding). The optimal sequence of these steps varies drastically depending on the document's inherent noise, type, and quality, leading to inefficient manual iteration and sub-optimal final accuracy.
+                        </p>
+                        <p>
+                            The objective of this research was to design and train a Reinforcement Learning (RL) agent to learn the optimal, dynamic sequence of pre-processing actions for any given input image. The social value lies in fully automating complex data entry and digitization tasks, significantly reducing human labor and computational overhead across industries reliant on legacy documents.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="methods">
+                    <h2 class="text-3xl font-bold text-white section-header">II. Methods: RL Architecture and Training</h2>
+                    
+                    <h3 class="text-xl font-semibold text-themed-purple mt-4 mb-2">System Architecture & Environment</h3>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            The system was built around an RL Agent trained to interact with a simulated environment representing the document pre-processing pipeline.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-300">
+                            <li>Observation Space: Included the current image state (via CNN features) and the current recognition accuracy score.</li>
+                            <li>Action Space: Consisted of a discrete set of common pre-processing operations (e.g., Gaussian Blur, morphological transformations, perspective correction).</li>
+                            <li>Reward Function: Designed to reward the agent for maximizing the final OCR accuracy while penalizing it for using too many sequential actions (minimizing processing time).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-8 mb-4 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-4">OCR Optimization System Architecture</h3>
+                        <div class="w-full mx-auto max-w-3xl">
+                             <img src="assets/images/project3_rl_architecture.png" alt="Diagram showing the deep reinforcement learning agent interacting with the OCR pre-processing environment" class="w-full h-auto object-cover rounded-md mb-4">
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2">The architecture diagram showing the RL agent (Policy Network) optimizing the pre-processing steps.</p>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-themed-purple mt-4 mb-2">Algorithm and Training</h3>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            A Policy Gradient method (specifically REINFORCE) was used as the core learning algorithm. The policy network itself was implemented using a Convolutional Neural Network (CNN) feature extractor coupled with a Recurrent Neural Network (RNN) to process the sequential nature of the actions taken. The model was trained against a diverse dataset of synthetically corrupted and real-world scanned documents.
+                        </p>
+                    </div>
+                </div>
+                
+                <div id="results">
+                    <h2 class="text-3xl font-bold text-white section-header">III. Results: Performance and Evaluation</h2>
+                    
+                    <h3 class="text-xl font-semibold text-themed-purple mt-4 mb-4">Performance Metrics</h3>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
+                            <li>Accuracy Improvement: The RL-optimized pipeline achieved an average recognition accuracy improvement of 8.3% compared to the best traditional sequential pipeline baseline.</li>
+                            <li>Efficiency: The agent demonstrated the ability to terminate the processing sequence earlier, resulting in a 20% reduction in the average number of actions required for high-quality documents.</li>
+                            <li>Generalization: The trained agent successfully generalized to entirely new document types (e.g., handwritten notes vs. structured tables) without retraining, confirming its robustness.</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-themed-purple mt-8 mb-4">Discussion and Conclusion</h3>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            The project successfully demonstrated that Deep Reinforcement Learning can be effectively applied to control and optimize complex image processing pipelines where human expertise or fixed algorithms fail to generalize. The results confirm the method's feasibility for creating truly autonomous, adaptive OCR systems.
+                        </p>
+                    </div>
+                </div>
+                
+                <div id="contribution" class="pt-4">
+                    <h2 class="text-3xl font-bold text-white section-header">IV. My Contribution & Role</h2>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            My primary role was focused on the Reinforcement Learning design and implementation. My contributions included:
+                        </p>
+                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
+                            <li>RL Environment Development: Building the simulated environment that models the state transitions and reward calculations for the OCR pipeline.</li>
+                            <li>Policy Network Implementation: Designing and coding the Policy Gradient agent (REINFORCE) using Pytorch, including the combined CNN-RNN architecture.</li>
+                            <li>Training and Hyperparameter Optimization: Leading the training runs and tuning the reward function and network parameters to achieve optimal performance metrics.</li>
+                            <li>Evaluation: Developing the statistical evaluation methods to compare the dynamic RL pipeline against traditional fixed-sequence baselines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center space-x-4 pt-8">
                     <a href="projects.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">← Back to Projects</a>
-                </div>
-
-                <div class="text-left text-gray-300">
-                    <h3 class="text-2xl font-semibold text-white mb-4">Key Features</h3>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Feature one: Explain what it does.</li>
-                        <li>Feature two: Describe its function.</li>
-                        <li>Feature three: How it enhances the project.</li>
-                    </ul>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-slate-900 bg-opacity-60 backdrop-blur-md text-white text-center py-6">
         <p>&copy; 2025 Adrian Krieger. All rights reserved.</p>
     </footer>
