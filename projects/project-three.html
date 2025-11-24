@@ -1,182 +1,308 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrian Krieger - OCR Optimization with RL</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b1120;
-            color: #e2e8f0;
-            background-image: url('https://images.unsplash.com/photo-1616429532585-f5b2b295c024?q=80&w=1740&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center top;
-            background-attachment: fixed;
-            position: relative;
-        }
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: -1;
-        }
-        .nav-link:hover {
-            color: #d1d5db;
-        }
-        .card {
-            background-color: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.4), 0 4px 8px -2px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease-in-out;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-        }
-        .section-header {
-            border-bottom: 2px solid #374151;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .text-themed-blue { color: #a5b4fc; }
-        .text-themed-purple { color: #c4b5fd; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optimal Control for Improving Assistive Exoskeletons</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter",
+        sans-serif;
+    }
+  </style>
 </head>
-<body class="antialiased">
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <h1 class="text-lg font-semibold tracking-tight">
+        Adrian Krieger
+      </h1>
+      <span class="text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
+        Projects
+      </span>
+    </div>
+  </header>
 
-    <main class="container mx-auto px-6 py-8 md:py-16">
-        <section id="project-three-details" class="py-12 md:py-20 text-center">
-            
-            <p class="text-lg font-medium text-themed-purple mb-2">Research Paper (Deep Learning & RL)</p>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Optimizing OCR Pipelines using Reinforcement Learning</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10">A deep reinforcement learning approach to automate document pre-processing and maximize recognition accuracy.</p>
-            
-            <div class="card p-8 rounded-xl max-w-5xl mx-auto text-left space-y-12">
-                
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 pb-4">
-                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">Reinforcement Learning (RL)</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">OCR Automation</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">Policy Gradient</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-purple text-sm rounded-full font-medium">Pytorch/Python</span>
-                </div>
+  <main class="mx-auto max-w-6xl px-4 py-10 lg:py-14">
+    <!-- Hero -->
+    <section class="grid gap-10 lg:grid-cols-[2fr,1.1fr] lg:items-start">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">
+          Assistive Robotics · Optimal Control
+        </p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+          Optimal Control for Improving Assistive Exoskeletons
+        </h2>
+        <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+          Falls during everyday walking are a leading cause of injury for
+          people with lower-limb impairments. Wearable exoskeletons could
+          react faster than human reflexes, but they need controllers that
+          keep users stable under unexpected disturbances and that can be
+          personalized to each person’s gait. In this project, I explored how
+          optimal control can both stabilize a standing person in a moving
+          vehicle and generate synthetic, personalized gait data to make
+          exoskeletons safer and easier to tune.
+        </p>
+      </div>
 
-                <div class="flex flex-wrap justify-center md:justify-start space-x-6">
-                    <a href="assets/documents/ocrl-paper.pdf" target="_blank" class="text-themed-purple hover:text-purple-300 transition-colors duration-200 font-bold">Read Full Paper (PDF) &rarr;</a>
-                    <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">View Code Repository &rarr;</a>
-                </div>
-                
-                
-                <div id="introduction">
-                    <h2 class="text-3xl font-bold text-white section-header">I. Introduction: Problem & Social Value</h2>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            Traditional Optical Character Recognition (OCR) systems rely on fixed, sequential pre-processing steps (e.g., de-skew, noise reduction, thresholding). The optimal sequence of these steps varies drastically depending on the document's inherent noise, type, and quality, leading to inefficient manual iteration and sub-optimal final accuracy.
-                        </p>
-                        <p>
-                            The objective of this research was to design and train a Reinforcement Learning (RL) agent to learn the optimal, dynamic sequence of pre-processing actions for any given input image. The social value lies in fully automating complex data entry and digitization tasks, significantly reducing human labor and computational overhead across industries reliant on legacy documents.
-                        </p>
-                    </div>
-                </div>
+      <!-- The single image on the page -->
+      <figure
+        class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-xl"
+      >
+        <!-- Replace the src with your actual image path -->
+        <img
+          src="exoskeleton-balance-ilqg.png"
+          alt="Simulation of a humanoid with a hip exoskeleton balancing on a moving platform and tracking human gait."
+          class="h-full w-full object-cover"
+        />
+        <figcaption class="px-4 pb-3 pt-2 text-xs text-slate-400">
+          MuJoCo simulations of (left) LQR balancing on a moving platform and
+          (right) iLQG tracking of a real human gait to generate personalized
+          synthetic data.
+        </figcaption>
+      </figure>
+    </section>
 
-                <div id="methods">
-                    <h2 class="text-3xl font-bold text-white section-header">II. Methods: RL Architecture and Training</h2>
-                    
-                    <h3 class="text-xl font-semibold text-themed-purple mt-4 mb-2">System Architecture & Environment</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            The system was built around an RL Agent trained to interact with a simulated environment representing the document pre-processing pipeline.
-                        </p>
-                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-300">
-                            <li>Observation Space: Included the current image state (via CNN features) and the current recognition accuracy score.</li>
-                            <li>Action Space: Consisted of a discrete set of common pre-processing operations (e.g., Gaussian Blur, morphological transformations, perspective correction).</li>
-                            <li>Reward Function: Designed to reward the agent for maximizing the final OCR accuracy while penalizing it for using too many sequential actions (minimizing processing time).</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="mt-8 mb-4 text-center">
-                        <h3 class="text-xl font-semibold text-white mb-4">OCR Optimization System Architecture</h3>
-                        <div class="w-full mx-auto max-w-3xl">
-                             <img src="assets/images/project3_rl_architecture.png" alt="Diagram showing the deep reinforcement learning agent interacting with the OCR pre-processing environment" class="w-full h-auto object-cover rounded-md mb-4">
-                        </div>
-                        <p class="text-sm text-gray-400 mt-2">The architecture diagram showing the RL agent (Policy Network) optimizing the pre-processing steps.</p>
-                    </div>
-                    
-                    <h3 class="text-xl font-semibold text-themed-purple mt-4 mb-2">Algorithm and Training</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            A Policy Gradient method (specifically REINFORCE) was used as the core learning algorithm. The policy network itself was implemented using a Convolutional Neural Network (CNN) feature extractor coupled with a Recurrent Neural Network (RNN) to process the sequential nature of the actions taken. The model was trained against a diverse dataset of synthetically corrupted and real-world scanned documents.
-                        </p>
-                    </div>
-                </div>
-                
-                <div id="results">
-                    <h2 class="text-3xl font-bold text-white section-header">III. Results: Performance and Evaluation</h2>
-                    
-                    <h3 class="text-xl font-semibold text-themed-purple mt-4 mb-4">Performance Metrics</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
-                            <li>Accuracy Improvement: The RL-optimized pipeline achieved an average recognition accuracy improvement of 8.3% compared to the best traditional sequential pipeline baseline.</li>
-                            <li>Efficiency: The agent demonstrated the ability to terminate the processing sequence earlier, resulting in a 20% reduction in the average number of actions required for high-quality documents.</li>
-                            <li>Generalization: The trained agent successfully generalized to entirely new document types (e.g., handwritten notes vs. structured tables) without retraining, confirming its robustness.</li>
-                        </ul>
-                    </div>
-                    
-                    <h3 class="text-xl font-semibold text-themed-purple mt-8 mb-4">Discussion and Conclusion</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            The project successfully demonstrated that Deep Reinforcement Learning can be effectively applied to control and optimize complex image processing pipelines where human expertise or fixed algorithms fail to generalize. The results confirm the method's feasibility for creating truly autonomous, adaptive OCR systems.
-                        </p>
-                    </div>
-                </div>
-                
-                <div id="contribution" class="pt-4">
-                    <h2 class="text-3xl font-bold text-white section-header">IV. My Contribution & Role</h2>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            My primary role was focused on the Reinforcement Learning design and implementation. My contributions included:
-                        </p>
-                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
-                            <li>RL Environment Development: Building the simulated environment that models the state transitions and reward calculations for the OCR pipeline.</li>
-                            <li>Policy Network Implementation: Designing and coding the Policy Gradient agent (REINFORCE) using Pytorch, including the combined CNN-RNN architecture.</li>
-                            <li>Training and Hyperparameter Optimization: Leading the training runs and tuning the reward function and network parameters to achieve optimal performance metrics.</li>
-                            <li>Evaluation: Developing the statistical evaluation methods to compare the dynamic RL pipeline against traditional fixed-sequence baselines.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap justify-center space-x-4 pt-8">
-                    <a href="projects.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">← Back to Projects</a>
-                </div>
-            </div>
+    <section
+      class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,2.2fr),minmax(260px,1fr)]"
+    >
+      <!-- IMRD description -->
+      <article
+        class="space-y-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-sm leading-relaxed text-slate-200 shadow-lg"
+      >
+        <!-- Introduction -->
+        <section>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            Introduction
+          </h3>
+          <p class="mt-3">
+            Many stroke survivors, veterans with neurotrauma, and older adults
+            rely on assistive devices but still face a high risk of falls while
+            walking or standing in dynamic environments such as buses and
+            trains. Exoskeletons can apply corrective torques at the hip, knee,
+            and ankle faster than humans can react, yet current controllers
+            struggle with two challenges: maintaining balance under
+            unpredictable platform motion, and collecting enough
+            person-specific gait data to personalize assistance.
+          </p>
+          <p class="mt-3">
+            This project investigates two complementary solutions. First, I
+            design a linear–quadratic regulator (LQR) that keeps a simulated
+            humanoid balanced on a randomly moving platform, with and without
+            added support structures like railings and a hip exoskeleton.
+            Second, I use iterative linear–quadratic Gaussian control (iLQG) to
+            transfer a real person’s gait from motion capture data into
+            simulation, enabling the future placement of virtual IMUs and
+            rapid, personalized controller tuning without extensive lab data
+            collection.
+          </p>
         </section>
-    </main>
 
-    <footer class="bg-slate-900 bg-opacity-60 backdrop-blur-md text-white text-center py-6">
-        <p>&copy; 2025 Adrian Krieger. All rights reserved.</p>
-    </footer>
+        <!-- Methods -->
+        <section>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            Methods
+          </h3>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu after clicking a link
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
+          <h4 class="mt-3 text-[0.95rem] font-semibold text-slate-50">
+            LQR balancing on a moving platform
+          </h4>
+          <p class="mt-2">
+            I built on DeepMind’s MuJoCo humanoid model with 27 degrees of
+            freedom and 21 torque-controlled joints. After linearizing the
+            dynamics around an upright standing pose, I solved the
+            discrete-time algebraic Riccati equation to obtain an LQR
+            state-feedback controller that regulates the humanoid’s state while
+            the floor undergoes random velocity perturbations in the forward–
+            backward direction.
+          </p>
+          <p class="mt-2">
+            To understand how physical aids affect stability, I ran four
+            experiments:
+          </p>
+          <ul class="mt-2 ml-4 list-disc space-y-1 text-slate-300">
+            <li>
+              <span class="font-medium">Experiment&nbsp;1 – Fixed feet:</span>
+              both feet were welded to the platform to test the best-case
+              stabilization performance.
+            </li>
+            <li>
+              <span class="font-medium">Experiment&nbsp;2 – Free feet:</span>
+              the constraints were removed so the controller had to manage
+              ankle and whole-body dynamics without enforced contact.
+            </li>
+            <li>
+              <span class="font-medium">Experiment&nbsp;3 – Railing support:</span>
+              I added a waist-height railing and extended the cost function to
+              keep the hands near the rail, encouraging the humanoid to use it
+              for support.
+            </li>
+            <li>
+              <span class="font-medium">Experiment&nbsp;4 – Hip exoskeleton:</span>
+              I modeled a simplified hip exoskeleton as hinged rods along each
+              thigh, disabled the humanoid’s native hip motors, and applied
+              LQR control through the exoskeleton actuators.
+            </li>
+          </ul>
 
-        // Toggle mobile menu visibility
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
+          <h4 class="mt-4 text-[0.95rem] font-semibold text-slate-50">
+            iLQG real-to-sim gait tracking
+          </h4>
+          <p class="mt-2">
+            To generate personalized synthetic gait data, I used iLQG to track
+            human motion in MuJoCo. I warm-started the optimization with a
+            model predictive control (MPC) walking policy and aligned it in
+            time with a real walking trial from the CMU motion capture
+            database. For each frame, I defined a cost that penalized deviation
+            between 16 selected humanoid keypoints and (1) the mocap keypoints
+            and (2) the MPC reference gait, along with a control-effort term.
+          </p>
+          <p class="mt-2">
+            MuJoCo’s analytical Jacobians provided the linearized dynamics and
+            cost derivatives for the backward Riccati pass. After computing
+            feedback gains, I performed a line search over control updates,
+            accepted trajectories that reduced total cost, and rolled them out
+            to iteratively refine the walking policy.
+          </p>
+        </section>
+
+        <!-- Results -->
+        <section>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            Results
+          </h3>
+
+          <h4 class="mt-3 text-[0.95rem] font-semibold text-slate-50">
+            LQR balance robustness
+          </h4>
+          <p class="mt-2">
+            With fixed feet (Experiment&nbsp;1), the LQR controller maintained
+            balance even when the platform experienced random velocities
+            between –5.1&nbsp;m/s and 5.1&nbsp;m/s at every time step. When I
+            removed the foot constraints (Experiment&nbsp;2), the maximum
+            tolerable perturbation dropped sharply to about 0.36&nbsp;m/s,
+            showing how strongly platform–foot coupling contributes to
+            stability.
+          </p>
+          <p class="mt-2">
+            Adding a railing (Experiment&nbsp;3) modestly improved robustness,
+            increasing the maximum stable perturbation speed to roughly
+            0.45&nbsp;m/s as the humanoid learned to lean on the rail. The hip
+            exoskeleton in Experiment&nbsp;4 successfully balanced the
+            humanoid under smaller perturbations (about ±0.1&nbsp;m/s) and
+            produced hip-joint angle trajectories that closely matched the
+            exoskeleton’s commanded torques, confirming correct coupling
+            between exoskeleton actuation and leg motion.
+          </p>
+
+          <h4 class="mt-4 text-[0.95rem] font-semibold text-slate-50">
+            iLQG gait-tracking performance
+          </h4>
+          <p class="mt-2">
+            After tuning the relative weights on mocap tracking, MPC
+            consistency, and control effort, the iLQG controller reproduced the
+            subject’s walking pattern for an average of 4.8&nbsp;seconds (±
+            1.06&nbsp;s) out of a 7-second trial across 30 runs—roughly 70% of
+            the full trajectory. Beyond this horizon, accumulated errors
+            triggered large corrective torques that destabilized the humanoid
+            and led to a fall, highlighting where better dynamics alignment and
+            torque constraints are needed.
+          </p>
+        </section>
+
+        <!-- Discussion / Evaluation -->
+        <section>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            Discussion &amp; Impact
+          </h3>
+          <p class="mt-3">
+            Together, these studies show that optimal control can both
+            stabilize exoskeleton users and reduce the data burden of
+            personalization. The LQR experiments provide a clear picture of how
+            design choices—such as railings or hip exoskeletons—change the
+            range of disturbances a person can safely tolerate. The iLQG
+            pipeline demonstrates that we can start from a few seconds of
+            motion capture data and create a physics-consistent walking model
+            that is suitable for placing virtual IMUs and exploring sensor
+            layouts before running physical experiments.
+          </p>
+          <p class="mt-3">
+            In future work, I plan to expand the exoskeleton model to multiple
+            joints, add realistic mass and contact forces, track joint angles
+            directly rather than sparse keypoints, and use the synthetic data to
+            train learning-based exoskeleton controllers (such as temporal
+            convolutional networks) that include LQR-style safety overrides for
+            extreme disturbances.
+          </p>
+        </section>
+
+        <!-- Role / contribution -->
+        <section>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            My Role
+          </h3>
+          <ul class="mt-3 ml-4 list-disc space-y-1 text-slate-300">
+            <li>
+              Defined the research problem around fall prevention and
+              exoskeleton personalization and led the overall project.
+            </li>
+            <li>
+              Implemented the MuJoCo humanoid simulation environment, moving
+              platform, railing, and simplified hip exoskeleton models.
+            </li>
+            <li>
+              Derived and coded the LQR controller, designed all four balance
+              experiments, and analyzed perturbation-robustness results.
+            </li>
+            <li>
+              Built the iLQG tracking pipeline, including cost design, warm-start
+              with MPC trajectories, and integration of CMU mocap data.
+            </li>
+            <li>
+              Performed result analysis, created figures and videos, and wrote
+              the project report summarizing implications for future
+              exoskeleton controllers.
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Project sidebar -->
+      <aside class="space-y-5 text-xs text-slate-300">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-slate-400">
+            Project Snapshot
+          </h3>
+          <dl class="mt-3 space-y-2">
+            <div class="flex justify-between gap-3">
+              <dt class="text-slate-400">Timeline</dt>
+              <dd>Semester-long research project</dd>
+            </div>
+            <div class="flex justify-between gap-3">
+              <dt class="text-slate-400">Domain</dt>
+              <dd>Assistive exoskeletons, optimal control</dd>
+            </div>
+            <div class="flex justify-between gap-3">
+              <dt class="text-slate-400">Tools</dt>
+              <dd>MuJoCo, Python, LQR, iLQG, MPC</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-slate-400">
+            Skills Demonstrated
+          </h3>
+          <ul class="mt-3 ml-4 list-disc space-y-1">
+            <li>Linear and nonlinear optimal control design</li>
+            <li>Physics-based simulation and modeling in MuJoCo</li>
+            <li>Experiment design and quantitative evaluation</li>
+            <li>Human-centered framing of robotics research</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
 </body>
 </html>
