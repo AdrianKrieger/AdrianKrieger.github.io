@@ -37,15 +37,19 @@
             transition: transform 0.2s ease-in-out;
             border: 1px solid rgba(148, 163, 184, 0.2);
         }
+        .section-header {
+            border-bottom: 2px solid #374151; /* slate-700 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
         .text-themed-blue { color: #a5b4fc; }
-        .text-themed-green { color: #81e6d9; }
         .text-themed-purple { color: #c4b5fd; }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="sticky top-0 bg-slate-900 bg-opacity-60 backdrop-blur-md shadow-lg z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="../index.html" class="text-2xl font-bold text-white">Adrian Krieger</a>
             <div class="hidden md:flex space-x-6 text-gray-300 font-medium">
                 <a href="../index.html#about" class="nav-link">About</a>
@@ -73,112 +77,128 @@
 
     <main class="container mx-auto px-6 py-8 md:py-16">
         <section id="project-one-details" class="py-12 md:py-20 text-center">
-            <p class="text-lg font-medium text-themed-blue mb-2">Bachelor Thesis (2024)</p>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Deep Learning for Automated Surface Quality Assessment in Robotic Grinding</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-12">Developing a robust dataset and evaluating machine learning viability for in-process quality control of metal components.</p>
             
-            <div class="card p-8 rounded-xl max-w-5xl mx-auto text-left space-y-8">
+            <p class="text-lg font-medium text-themed-blue mb-2">Bachelor Thesis (Aerospace Engineering)</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Deep Learning for Automated Surface Quality Assessment in Robotic Grinding</h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-10">Developing a robust dataset and evaluating machine learning viability for in-process quality control of metal components.</p>
+            
+            <div class="card p-8 rounded-xl max-w-5xl mx-auto text-left space-y-12">
                 
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pb-4">
                     <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Deep Learning (DL)</span>
                     <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Computer Vision</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Robotics / EOAT</span>
+                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">IMRD Structure</span>
                     <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">VGG16 & ResNet-18</span>
                 </div>
 
-                <div class="flex flex-wrap justify-center md:justify-start space-x-6 mb-8">
+                <div class="flex flex-wrap justify-center md:justify-start space-x-6">
                     <a href="assets/documents/cv.pdf" target="_blank" class="text-themed-blue hover:text-blue-300 transition-colors duration-200 font-bold">Read Full Thesis (PDF) &rarr;</a>
                     <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">View GitHub &rarr;</a>
                 </div>
                 
-                <hr class="border-gray-700">
-
-                <h2 class="text-3xl font-bold text-white pt-4">I. Introduction & Social Value</h2>
-                <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                    <p>
-                        [cite_start]The final finishing step, such as **grinding**, in manufacturing processes is still overwhelmingly performed manually due to a lack of investment in automation[cite: 88]. [cite_start]Given the expected growth of AI and robotics in European industry [cite: 85] [cite_start]and the rising challenge of finding skilled workers[cite: 87], automating this final step is critical. [cite_start]The primary challenge lies in establishing **dynamic, in-process quality evaluation** that is superior to slow, contact-based tactile devices [cite: 94] [cite_start]or expensive laser systems[cite: 95].
-                    </p>
-                    <p>
-                        [cite_start]The project's objective was to create a **preliminary dataset of labeled grinding images** using a camera system and experiment with different Machine Learning (ML) and Deep Learning (DL) approaches to establish a viable future direction for the **ROBOTe lab's fully automatic robotic-arm manufacturing solution**[cite: 115, 111]. [cite_start]The desired system needed the ability to determine if the necessary surface quality (mean roughness parameter Rz) had been reached[cite: 112, 113].
-                    </p>
-                </div>
                 
-                <div class="my-10 text-center">
-                    <h3 class="text-xl font-semibold text-white mb-4">Workpiece Condition: Before & After Grinding</h3>
-                                        [cite_start]<p class="text-sm text-gray-400 mt-2">The workpiece before grinding (left, showing milling grooves, Rz $\approx 12.7\mu m$) and after 124 iterations (right, Rz $\approx 1.1\mu m$). [cite: 141, 142]</p>
+                <div id="introduction">
+                    <h2 class="text-3xl font-bold text-white section-header">I. Introduction: Social Value & Objective</h2>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            Automating the final grinding and finishing step in manufacturing processes is critical due to the rising challenge of finding skilled workers and the overall industry push toward AI and robotics. Current quality control relies on slow, contact-based tactile devices or expensive laser systems, limiting the feasibility of dynamic, in-process measurements.
+                        </p>
+                        <p>
+                            The project objective was to create a preliminary dataset of labeled grinding images and evaluate different Machine Learning (ML) and Deep Learning (DL) approaches to establish a viable future direction for the ROBOTe lab's fully automatic robotic-arm manufacturing solution.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 mb-4 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-4">Workpiece Condition: Before & After Grinding</h3>
+                        <div class="w-full mx-auto max-w-3xl">
+                             
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2">The workpiece before grinding (left, Rz $\approx 12.7\mu m$) and after 124 iterations (right, Rz $\approx 1.1\mu m$).</p>
+                    </div>
                 </div>
 
-                <hr class="border-gray-700">
-
-                <h2 class="text-3xl font-bold text-white pt-4">II. Methods: Data Collection & Processing</h2>
-                <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">A. Experimental Setup</h3>
-                    <p>
-                        [cite_start]Grinding was performed on a **C45 steel workpiece** using the **KUKA LBR iiwa 7 R800 robotic arm** and a prototype End-of-Arm-Tool (EOAT) to create realistic, real-world grinding patterns[cite: 131, 136, 116]. [cite_start]Images were acquired across 125 grinding iterations using three cameras (Canon EOS 50, Allied Vision, and Logitech C920) to compare accuracy-speed trade-offs[cite: 154].
-                    </p>
-                    <p>
-                        To ensure model robustness, images were captured under varied conditions:
-                        <ul class="list-disc list-inside space-y-1 pl-4 text-gray-300">
-                            [cite_start]<li>**Angles:** Four 3D-printed brackets were used to simulate non-ideal factory scenarios by creating angles of $30^{\circ}$, $45^{\circ}$, $60^{\circ}$, and $90^{\circ}$ between the camera and the workpiece surface[cite: 119, 191].</li>
-                            [cite_start]<li>**Lighting:** Seven unique lux configurations were used for $90^{\circ}$ images and four for angled images to increase robustness against variable factory lighting[cite: 264, 267]. [cite_start]Light-blocking material was added to reduce reflections and noise[cite: 294].</li>
+                <div id="methods">
+                    <h2 class="text-3xl font-bold text-white section-header">II. Methods: Data Acquisition & Processing</h2>
+                    
+                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Experimental Setup & Acquisition</h3>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            Grinding was performed on a C45 steel workpiece using the KUKA LBR iiwa 7 R800 robotic arm and a prototype EOAT. To ensure the final model was robust to real-world factory conditions, images were acquired under varied circumstances:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-300">
+                            <li>**Angles:** Four sets of 3D-printed brackets were used to capture images at $30^{\circ}$, $45^{\circ}$, $60^{\circ}$, and $90^{\circ}$ angles.</li>
+                            <li>**Lighting:** Seven unique lux configurations were applied to the $90^{\circ}$ images to test model resilience against variable lighting conditions.</li>
+                            <li>**Hardware:** Three different cameras (Canon EOS 50, Allied Vision, Logitech C920) were used to create three separate datasets for comparison.</li>
                         </ul>
-                    </p>
+                    </div>
+
+                    <div class="mt-8 mb-4 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-4">Experimental Setup for Image Acquisition</h3>
+                        <div class="w-full mx-auto max-w-3xl">
+                            
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2">The experimental rig showing the KUKA arm's EOAT, light bars, and workpiece setup.</p>
+                    </div>
                     
-                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">B. Data Processing & Labeling</h3>
-                    <p>
-                        [cite_start]The dataset was labeled using the **highest value** from three roughness measurements taken at each location with a tactile device (Garant Perthometer H1)[cite: 362, 300]. [cite_start]This conservative approach ensures the model errs on the side of unnecessary reprocessing rather than producing a faulty part[cite: 365].
-                    </p>
-                    <p>
-                        [cite_start]The raw images were pre-processed using a custom **edge detection algorithm** to automate background cropping, improving image alignment[cite: 659, 660]. [cite_start]The final dataset size was significantly increased (extended) by cropping each raw image into up to 24 smaller, specific regions based on where roughness was measured[cite: 673, 674, 722].
-                    </p>
-                    
-                    <div class="my-10 text-center">
-                        <h3 class="text-xl font-semibold text-white mb-4">Image Acquisition Setup</h3>
-                                                [cite_start]<p class="text-sm text-gray-400 mt-2">Image acquisition setup showing the workpiece, LED bar lights, luxmeter, and camera positioning (Figure 3 in the thesis). [cite: 177, 166, 150]</p>
+                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Data Processing Pipeline</h3>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            To ensure high data quality, raw images were processed using a custom Python pipeline. This involved automated background cropping via an edge detection algorithm and extending the dataset size by cropping relevant regions up to 24 times per raw image.
+                        </p>
+                        <p>
+                            For labeling, the highest roughness value ($\mathbf{Rz}$) measured by the tactile device was used to ensure the resulting model was conservative—preferring unnecessary additional grinding over producing a faulty part.
+                        </p>
                     </div>
                 </div>
                 
-                <hr class="border-gray-700">
-
-                <h2 class="text-3xl font-bold text-white pt-4">III. Results & Evaluation</h2>
-                <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                    <p>
-                        [cite_start]Experiments were conducted using Feed-Forward Neural Networks (FNN) as a baseline, and VGG16 and ResNet-18 Convolutional Neural Networks (CNN) for optimization[cite: 799]. [cite_start]The primary metric focused on **classification** accuracy (determining if grinding was complete)[cite: 795].
-                    </p>
+                <div id="results">
+                    <h2 class="text-3xl font-bold text-white section-header">III. Results & Evaluation</h2>
                     
-                    <div class="my-10 text-center flex flex-col md:flex-row gap-4">
-                        <div class="w-full md:w-1/2">
-                            <h3 class="text-xl font-semibold text-white mb-4">Classification Performance (Baseline vs. Best)</h3>
-                                                        <p class="text-sm text-gray-400 mt-2">Model 8 (Best) achieved significant improvements across all classes compared to the FNN baseline (Model 1).</p>
+                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-4">Classification Model Performance</h3>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            Experiments with FNN, ResNet-18, and VGG16 Convolutional Neural Networks (CNN) focused on classification accuracy. The optimal settings involved using the VGG16 architecture combined with data augmentation and filtering out images from poor lux configurations.
+                        </p>
+                    </div>
+                    
+                    <div class="my-8 flex flex-col lg:flex-row gap-8">
+                        <div class="w-full lg:w-1/2">
+                            <h3 class="text-lg font-semibold text-white mb-4">Metrics Comparison: Baseline vs. VGG16 (Model 8)</h3>
+                            <div class="w-full">
+                                
+                            </div>
+                            <p class="text-sm text-gray-400 mt-2">Model 8 achieved significant improvements across all roughness classes (1-3$\mu m$ through 7+$\mu m$) compared to the FNN baseline.</p>
                         </div>
-                        <div class="w-full md:w-1/2">
-                            <h3 class="text-xl font-semibold text-white mb-4">ROC Curves Confirming Improvement</h3>
-                                                        [cite_start]<p class="text-sm text-gray-400 mt-2">The ROC curve of Model 8 (right, average AUC $\approx 0.97$) shows superior performance to the baseline (left, average AUC $\approx 0.85$). [cite: 865, 866]</p>
+                        <div class="w-full lg:w-1/2">
+                            <h3 class="text-lg font-semibold text-white mb-4">ROC Curves & AUC Evaluation</h3>
+                            <div class="w-full">
+                                
+                            </div>
+                            <p class="text-sm text-gray-400 mt-2">ROC curves showing Model 8's superior performance (Average AUC $\approx 0.97$) compared to the baseline (Average AUC $\approx 0.85$).</p>
                         </div>
                     </div>
                     
-                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Key Findings:</h3>
-                    <ul class="list-disc list-inside space-y-1 pl-4 text-gray-300">
-                        [cite_start]<li>**Best Model:** The **VGG16 architecture** (Model 8), trained with $90^{\circ}$ images using optimized lux configurations (Lux 3-6) and **data augmentation**, achieved the highest test accuracy of **82.50%**[cite: 852, 1003].</li>
-                        [cite_start]<li>**Regression Accuracy:** A VGG16 regression model achieved a Mean Absolute Error (**MAE**) of **$0.3328\mu m$** in the highest-precision $1\mu m-2\mu m$ roughness range[cite: 1004].</li>
-                        [cite_start]<li>**Robustness:** The elimination of images taken under poor lighting (Lux 1, 2, and 7) and the use of augmentation led to an $18.64\%$ improvement over the baseline model[cite: 853, 855].</li>
-                        [cite_start]<li>**Angled Performance:** The test accuracy for the $\mathbf{60^{\circ}}$ images was surprisingly high at **$74.00\%$** [cite: 946, 1011][cite_start], demonstrating that high-angle measurement is feasible where $90^{\circ}$ camera access is impossible[cite: 1012].</li>
+                    <h3 class="text-xl font-semibold text-themed-blue mt-8 mb-4">Key Evaluation Findings</h3>
+                    <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
+                        <li>The best model (VGG16 Model 8) achieved a test accuracy of 82.50%, demonstrating the method's feasibility.</li>
+                        <li>A VGG16 regression model achieved a high-precision Mean Absolute Error (MAE) of $0.3328\mu m$ in the $1\mu m-2\mu m$ roughness range.</li>
+                        <li>The test accuracy for the $60^{\circ}$ angled images was surprisingly high at $74.00\%$, suggesting viability for applications where $90^{\circ}$ camera access is physically impossible.</li>
                     </ul>
                 </div>
                 
-                <hr class="border-gray-700">
-
-                <h2 class="text-3xl font-bold text-white pt-4">IV. My Contribution & Next Steps</h2>
-                <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                    <p>
-                        As the author of this Bachelor Thesis, I was the **sole researcher and implementer** responsible for the entire data acquisition and analysis process. My specific contributions include:
-                    </p>
-                    <ul class="list-disc list-inside space-y-1 pl-4 text-gray-300">
-                        [cite_start]<li>**Experimental Design:** Conceptualizing the experimental setup, including designing the 3D-printed brackets to maintain a consistent workpiece center for all camera angles[cite: 191, 197].</li>
-                        [cite_start]<li>**Data Collection:** Performing 125 grinding iterations using the KUKA robotic arm, acquiring the multi-angle, multi-lux image dataset, and conducting over 500 physical tactile roughness measurements[cite: 314, 514].</li>
-                        [cite_start]<li>**Pipeline Development:** Writing all **Python scripts** for the data processing pipeline, including the automated background cropping via edge detection, generating the complex file naming convention (FNC), and creating the final classification and regression label files[cite: 660, 655, 745].</li>
-                        [cite_start]<li>**Model Evaluation:** Running the VGG16 and ResNet-18 model training experiments and performing the detailed metric analysis (ROC, AUC, MAE) to determine the optimal configuration for in-process quality control[cite: 799, 819].</li>
-                    </ul>
+                <div id="contribution" class="pt-4">
+                    <h2 class="text-3xl font-bold text-white section-header">IV. My Contribution & Role</h2>
+                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>
+                            As the sole researcher for this Bachelor Thesis, my role involved the design, implementation, execution, and analysis of the entire project:
+                        </p>
+                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
+                            <li>Experimental Design: Conceptualizing and designing the acquisition setup, including custom 3D-printed brackets for multi-angle image capture.</li>
+                            <li>Data Acquisition: Leading the 125 grinding iterations, acquiring the multi-angle and multi-lux image dataset, and conducting the physical tactile roughness measurements.</li>
+                            <li>Pipeline Development: Writing all Python scripts for data processing, including automated cropping, FNC generation, and label file creation.</li>
+                            <li>ML Implementation: Implementing, training, and analyzing all VGG16 and ResNet-18 classification and regression models.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="flex flex-wrap justify-center space-x-4 pt-8">
