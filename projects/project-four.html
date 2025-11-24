@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrian Krieger - Embodied AI Safety</title>
+    <title>Adrian Krieger - Exoskeleton Fall Safety</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0b1120;
+            background:
+                radial-gradient(circle at top, #1f2937 0, #020617 55%, #000000 100%);
             color: #e2e8f0;
-            background-image: url('https://images.unsplash.com/photo-1616429532585-f5b2b295c024?q=80&w=1740&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center top;
-            background-attachment: fixed;
-            position: relative;
-        }
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: -1;
-        }
-        .nav-link:hover {
-            color: #d1d5db;
+            min-height: 100vh;
         }
         .card {
-            background-color: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.4), 0 4px 8px -2px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease-in-out;
-            border: 1px solid rgba(148, 163, 184, 0.2);
+            background-color: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(10px);
+            box-shadow:
+                0 18px 40px rgba(0, 0, 0, 0.55),
+                0 0 0 1px rgba(148, 163, 184, 0.25);
+            border-radius: 1rem;
         }
         .section-header {
             border-bottom: 2px solid #374151;
@@ -43,121 +28,353 @@
             margin-bottom: 1.5rem;
         }
         .text-themed-blue { color: #a5b4fc; }
-        .text-themed-purple { color: #c4b5fd; }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.8rem;
+            border-radius: 9999px;
+            background-color: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+        .pill-dot {
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 9999px;
+            margin-right: 0.4rem;
+            background-color: #a5b4fc;
+        }
+        .link-underline {
+            position: relative;
+        }
+        .link-underline::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -0.15rem;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #a5b4fc, #c4b5fd);
+            opacity: 0;
+            transform: scaleX(0.8);
+            transform-origin: left;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .link-underline:hover::after {
+            opacity: 1;
+            transform: scaleX(1);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <main class="container mx-auto px-6 py-8 md:py-16">
-        <section id="project-four-details" class="py-12 md:py-20 text-center">
-            
-            <p class="text-lg font-medium text-themed-blue mb-2">Research Report (AI Safety)</p>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Embodied AI Safety: Reward Tampering and Causal Inference</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10">A study on safeguarding reinforcement learning agents from environment manipulation in simulated robotic tasks.</p>
-            
-            <div class="card p-8 rounded-xl max-w-5xl mx-auto text-left space-y-12">
+    <main class="container mx-auto px-6 py-10 md:py-16">
+        <section id="project-exo-fall" class="py-6 md:py-10">
+            <!-- Intro / Hero -->
+            <div class="max-w-5xl mx-auto text-center mb-10 md:mb-14">
+                <div class="pill mx-auto mb-4">
+                    <span class="pill-dot"></span>
+                    <span>Graduate Research · Embodied AI Safety</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                    Minimizing Injury in High-Risk Falls During Exoskeleton Use
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Older adults fall frequently, and head trauma during a fall can be life-changing. 
+                    This project explores how Hamilton–Jacobi reachability and reinforcement learning 
+                    can work together to reduce head-impact severity when a fall with a lower-limb 
+                    exoskeleton is unavoidable rather than preventable.
+                </p>
+            </div>
+
+            <!-- Main card -->
+            <div class="card p-7 md:p-10 max-w-5xl mx-auto space-y-10 text-left">
                 
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 pb-4">
-                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">AI Safety & Alignment</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Reinforcement Learning</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Causal Inference</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Embodied AI</span>
+                <!-- Meta row -->
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-slate-900/70 text-themed-blue text-xs font-semibold tracking-wide">
+                            Exoskeletons &amp; Biomechanics
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-slate-900/70 text-themed-blue text-xs font-semibold tracking-wide">
+                            Hamilton–Jacobi Reachability
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-slate-900/70 text-themed-blue text-xs font-semibold tracking-wide">
+                            Safe Reinforcement Learning
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-slate-900/70 text-themed-blue text-xs font-semibold tracking-wide">
+                            MuJoCo Simulation
+                        </span>
+                    </div>
+                    <div class="text-xs md:text-sm text-gray-400 text-right">
+                        <p>Course: Embodied AI Safety · Carnegie Mellon University</p>
+                        <p>Advisors: Kensuke Nakamura &amp; Prof. Andrea Bajcsy</p>
+                    </div>
                 </div>
 
-                <div class="flex flex-wrap justify-center md:justify-start space-x-6">
-                    <a href="assets/documents/ai-safety-report.pdf" target="_blank" class="text-themed-blue hover:text-blue-300 transition-colors duration-200 font-bold">Read Final Report (PDF) &rarr;</a>
-                    <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">View Code Repository &rarr;</a>
-                </div>
-                
-                
-                <div id="introduction">
-                    <h2 class="text-3xl font-bold text-white section-header">I. Introduction: The Alignment Problem</h2>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            A key challenge in advanced AI is the risk of reward tampering—where an agent learns to manipulate its reward signal rather than achieving the intended goal. This threat is particularly acute in embodied systems (robots, virtual agents) that interact with complex environments. The objective of this research was to develop and test safety protocols to detect and mitigate reward tampering using causal inference techniques.
-                        </p>
-                        <p>
-                            The social value of this work is foundational: establishing robust safety measures is necessary for deploying advanced AI systems safely and reliably in real-world settings where malicious or non-aligned environmental feedback could lead to catastrophic failure.
-                        </p>
-                    </div>
+                <!-- Links -->
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="assets/documents/Embodied_AI_Safety_Final_Report.pdf"
+                       target="_blank"
+                       class="text-themed-blue font-semibold text-sm md:text-base link-underline">
+                        Read Full Project Report (PDF) &rarr;
+                    </a>
+                    <a href="#"
+                       class="text-gray-400 hover:text-gray-200 font-semibold text-sm md:text-base link-underline">
+                        View Simulation &amp; Training Code &rarr;
+                    </a>
                 </div>
 
-                <div id="methods">
-                    <h2 class="text-3xl font-bold text-white section-header">II. Methods: Causal Inference and Simulation</h2>
-                    
-                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Experimental Setup & Tampering Design</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                <!-- One main figure ONLY -->
+                <figure class="mt-6">
+                    <img src="assets/images/exoskeleton_fall_safety.png"
+                         alt="MuJoCo humanoid model used to study safe falling strategies for a lower-limb exoskeleton user."
+                         class="w-full h-auto rounded-lg border border-slate-600/70 shadow-lg" />
+                    <figcaption class="mt-3 text-sm text-gray-400">
+                        Simulation of a pushed humanoid with hip and knee actuation only. 
+                        The controller uses a learned safety value function to steer the head away from ground impact.
+                    </figcaption>
+                </figure>
+
+                <!-- I. Introduction -->
+                <section id="introduction">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                        I. Introduction – Why Safe Falling Matters
+                    </h2>
+                    <div class="space-y-4 text-base md:text-lg text-gray-200 leading-relaxed">
                         <p>
-                            The experiments were conducted in a simulated robotic environment (e.g., Mujoco or OpenAI Gym) where an agent was tasked with an objective. A novel mechanism was introduced that allowed the agent to manipulate a sensor input, which subsequently corrupted its true reward function. This setup simulates a scenario where an agent bypasses the intended task to maximize the reward signal directly.
+                            Exoskeletons are typically designed to make walking easier, 
+                            but older adults consistently rank fall prevention and fall safety 
+                            as the most important feature they want from these devices. 
+                            Falls are common in this population, and head impact during a fall 
+                            can cause severe neurotrauma, loss of independence, or even death.
                         </p>
                         <p>
-                            To detect this manipulation, a causal model of the environment and agent interaction was developed. We specifically used the back-door adjustment criterion from causal inference to distinguish the agent's true performance from performance achieved via reward tampering.
+                            Most current exoskeleton controllers focus on energy savings and gait assistance, 
+                            not on what the device should do once a destabilizing push makes a fall inevitable. 
+                            This project proposes a safety-critical control framework that explicitly targets 
+                            the high-risk phase of a fall and aims to reduce the chance and severity of head impact.
+                        </p>
+                        <p>
+                            Concretely, the objective was to integrate Hamilton–Jacobi (HJ) reachability analysis 
+                            with Soft Actor-Critic (SAC) reinforcement learning in a physics-accurate MuJoCo 
+                            humanoid model, and to evaluate whether this hybrid controller could learn 
+                            safe falling strategies for a lower-limb exoskeleton user.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- II. Methods -->
+                <section id="methods">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                        II. Methods – From Safety Specification to Simulation
+                    </h2>
+
+                    <h3 class="text-lg md:text-xl font-semibold text-themed-blue mb-2">
+                        A. Modeling the Fall and the Injury Risk
+                    </h3>
+                    <div class="space-y-3 text-base md:text-lg text-gray-200 leading-relaxed">
+                        <p>
+                            The starting point was a simplified lower-limb exoskeleton model that can apply 
+                            torque at the hip and knee joints while the human body is represented by a 
+                            3D MuJoCo humanoid. The system state includes joint angles and velocities, 
+                            as well as the three-dimensional position and velocity of key body segments, 
+                            with a special focus on the head.
+                        </p>
+                        <p>
+                            To capture injury risk, the project defined a <em>failure set</em> of states in which 
+                            the head is on or through the ground, and an <em>unsafe set</em> of states from which 
+                            head impact becomes unavoidable under worst-case disturbances. A signed-distance function combines head height 
+                            and vertical head velocity to estimate how much stopping distance remains before 
+                            the head would impact the ground at a tolerable deceleration level.
                         </p>
                     </div>
 
-                    <div class="mt-8 mb-4 text-center">
-                        <h3 class="text-xl font-semibold text-white mb-4">Embodied AI Experimental Environment</h3>
-                        <div class="w-full mx-auto max-w-3xl">
-                            <img src="assets/images/project4_ai_safety_setup.png" alt="Simulated robotic environment used for AI safety reward tampering experiments" class="w-full h-auto object-cover rounded-md mb-4">
-                        </div>
-                        <p class="text-sm text-gray-400 mt-2">The simulated environment showing the agent, the task, and the external variables subject to tampering.</p>
-                    </div>
-                    
-                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Safety Protocol Implementation</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
+                    <h3 class="text-lg md:text-xl font-semibold text-themed-blue mt-6 mb-2">
+                        B. Hamilton–Jacobi Reachability for Safe Control
+                    </h3>
+                    <div class="space-y-3 text-base md:text-lg text-gray-200 leading-relaxed">
                         <p>
-                            The safety protocol involved constantly monitoring the causal relationship between the agent's actions, the environment state, and the perceived reward. By calculating the causal effect of key non-task-related actions on the reward, the system could flag anomalous behaviors indicative of reward tampering, thereby safeguarding the overall AI system integrity.
+                            Hamilton–Jacobi reachability was used to approximate the backward-reachable tube 
+                            of the unsafe set. A neural network learned a value function that maps each state 
+                            to a safety value: positive values are safe, and negative values indicate states 
+                            from which head impact cannot be avoided under worst-case disturbances.
+                        </p>
+                        <p>
+                            The gradient of this value function provides a direction in state space that most 
+                            quickly increases safety. When the safety value becomes negative or close to zero, 
+                            the controller can override the nominal action and apply a “safety control” that 
+                            steers the system away from high-risk configurations.
                         </p>
                     </div>
-                </div>
-                
-                <div id="results">
-                    <h2 class="text-3xl font-bold text-white section-header">III. Results: Detection and Mitigation</h2>
-                    
-                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-4">Key Evaluation Findings</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
-                            <li>Detection Accuracy: The causal inference protocol achieved over 95% accuracy in distinguishing between legitimate task progress and reward-tampering behavior.</li>
-                            <li>Early Warning: The method successfully identified tampering within 50 training episodes, significantly before the agent's policy fully diverged from the intended objective.</li>
-                            <li>Mitigation Effectiveness: When the anomaly was flagged, re-training the agent using a causally-corrected reward function (filtered by the safety protocol) restored alignment and maximized true task completion.</li>
+
+                    <h3 class="text-lg md:text-xl font-semibold text-themed-blue mt-6 mb-2">
+                        C. Safe Reinforcement Learning in MuJoCo
+                    </h3>
+                    <div class="space-y-3 text-base md:text-lg text-gray-200 leading-relaxed">
+                        <p>
+                            The safety analysis was embedded into a Soft Actor-Critic reinforcement learning loop. 
+                            During simulation, the humanoid starts in a standing posture, then experiences a 
+                            randomized horizontal push of 150–600&nbsp;N to the torso after 0.5&nbsp;s. 
+                            From this moment on, the policy must decide how to use only hip and knee torques 
+                            to manage the fall.
+                        </p>
+                        <p>
+                            At each time step, the environment computes the safety value and its gradient. 
+                            If the state is considered safe, the SAC policy chooses the action. 
+                            If the state enters the backward-reachable tube, the safety control 
+                            replaces the SAC action. The reward function penalizes low head height 
+                            and adds an extra penalty when the safety value is negative, so the critic 
+                            learns to assign low value to trajectories that pass through unsafe regions.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- III. Results & Evaluation -->
+                <section id="results">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                        III. Results – What Worked and What Did Not
+                    </h2>
+                    <div class="space-y-4 text-base md:text-lg text-gray-200 leading-relaxed">
+                        <p>
+                            Training was run for 100 episodes, where each episode contained multiple epochs 
+                            of simulated falls with varying push directions and magnitudes. 
+                            Throughout these runs, the cumulative reward stayed negative, which suggests 
+                            that the controller was unable to consistently prevent head contact with the ground.
+                        </p>
+                        <p>
+                            Visual inspection of the learned policies confirmed that the exoskeleton torques 
+                            rarely generated large, coordinated motions that could meaningfully reorient the body. 
+                            Even when actuator limits were relaxed, the controller did not discover strategies 
+                            such as rotating the torso, tucking the head, or directing impact toward a safer body segment.
+                        </p>
+                        <p>
+                            These findings show that, in its current form, the hybrid HJ–SAC framework 
+                            did not yet produce a reliable safe-falling controller, but it did reveal 
+                            several important design constraints and failure modes.
+                        </p>
+                    </div>
+
+                    <h3 class="text-lg md:text-xl font-semibold text-themed-blue mt-6 mb-2">
+                        Evaluation – Interpreting the Negative Results
+                    </h3>
+                    <ul class="list-disc list-inside space-y-2 text-base md:text-lg text-gray-200 leading-relaxed">
+                        <li>
+                            <span class="font-semibold">Limited actuation:</span> 
+                            Restricting control to hip and knee joints may not provide enough authority 
+                            to meaningfully change fall trajectories, especially when the upper body is 
+                            modeled as passive and multi-segment.
+                        </li>
+                        <li>
+                            <span class="font-semibold">Reward shaping:</span> 
+                            The safety penalty is large at the beginning of training, 
+                            which prevents the SAC policy from discovering even moderately helpful behaviors 
+                            before the value function becomes reliable.
+                        </li>
+                        <li>
+                            <span class="font-semibold">High dimensionality:</span> 
+                            Learning an accurate safety value function for a full humanoid is challenging, 
+                            and implementation bugs or approximation errors can easily obscure the 
+                            intended backward-reachable tube.
+                        </li>
+                        <li>
+                            <span class="font-semibold">Modeling choices:</span> 
+                            Making the upper body completely rigid prevents realistic failure modes, 
+                            while leaving it fully articulated makes the control problem harder. 
+                            Both extremes affected how informative the training data was.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- IV. Discussion & Future Directions -->
+                <section id="discussion">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                        IV. Discussion – Toward Safer Exoskeleton Falls
+                    </h2>
+                    <div class="space-y-4 text-base md:text-lg text-gray-200 leading-relaxed">
+                        <p>
+                            Even though the controller did not converge to a successful policy, 
+                            the project demonstrates how safety analysis can be tightly integrated with 
+                            modern deep reinforcement learning. The work also clarifies when that integration 
+                            may fail, for example when the safety penalty overwhelms the task reward 
+                            or when the control authority is fundamentally insufficient.
+                        </p>
+                        <p>
+                            A promising next step is to reformulate the problem as safe trajectory tracking 
+                            rather than as a static “avoid head impact” condition. In that view, 
+                            Hamilton–Jacobi reachability could guarantee that the exoskeleton can still 
+                            follow a pre-designed safe-fall motion under worst-case pushes, making 
+                            martial-arts-inspired strategies like UKEMI more realistic for exoskeleton users.
+                        </p>
+                        <p>
+                            Future simulations on lower-dimensional models such as Walker2D, 
+                            followed by richer sensing and possibly additional hardware (for example, 
+                            deployable supports), could bring this framework closer to a deployable 
+                            safe-falling system for real users.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- V. My Contribution -->
+                <section id="contribution">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                        V. My Role and Contributions
+                    </h2>
+                    <div class="space-y-3 text-base md:text-lg text-gray-200 leading-relaxed">
+                        <p>
+                            I led this project from initial concept to final report, 
+                            with responsibility for both the control-theoretic design 
+                            and the simulation infrastructure.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>
+                                <span class="font-semibold">Problem and safety specification:</span> 
+                                Defined the exoskeleton fall-safety problem, 
+                                formulated the failure and unsafe sets, 
+                                and designed the signed-distance function that encodes safe stopping distance for the head.
+                            </li>
+                            <li>
+                                <span class="font-semibold">Control and learning framework:</span> 
+                                Implemented the Hamilton–Jacobi value function approximation, 
+                                integrated it with Soft Actor-Critic, and designed the safety-aware reward structure.
+                            </li>
+                            <li>
+                                <span class="font-semibold">Simulation pipeline:</span> 
+                                Built and modified the MuJoCo humanoid environment, 
+                                scripted the randomized push experiments, 
+                                and managed data logging and visualization for training runs.
+                            </li>
+                            <li>
+                                <span class="font-semibold">Analysis and reporting:</span> 
+                                Diagnosed failure modes, proposed redesigns for future work, 
+                                and wrote the full technical report and presentation materials 
+                                summarizing lessons learned for exoskeleton safety research.
+                            </li>
                         </ul>
-                    </div>
-                    
-                    <h3 class="text-xl font-semibold text-themed-blue mt-8 mb-4">Discussion and Conclusion</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
                         <p>
-                            The project demonstrates that embedding formal safety checks using causal inference provides a robust defense against reward tampering in complex embodied AI systems. This method moves beyond simple anomaly detection to identify the causal roots of misalignment, offering a powerful tool for developing auditable and trustworthy AI.
+                            Together, these contributions highlight my focus on safety-critical robotics, 
+                            safe reinforcement learning, and the practical challenges of translating 
+                            theoretical guarantees into embodied systems that protect real people during falls.
                         </p>
                     </div>
-                </div>
-                
-                <div id="contribution" class="pt-4">
-                    <h2 class="text-3xl font-bold text-white section-header">IV. My Contribution & Role</h2>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            As the lead researcher on this project, my role was centered on the theoretical design and implementation of the safety protocol:
-                        </p>
-                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
-                            <li>Protocol Design: Developing the causal graph and defining the inference criteria (back-door adjustment) used to detect reward manipulation.</li>
-                            <li>Implementation and Testing: Integrating the causal model into the RL training loop and validating its detection rate against various tampering strategies in the simulation environment.</li>
-                            <li>Reporting: Co-authoring the final technical report and presenting the findings on the feasibility of causal inference for AI safety.</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
 
-                <div class="flex flex-wrap justify-center space-x-4 pt-8">
-                    <a href="projects.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">← Back to Projects</a>
+                <!-- Back link -->
+                <div class="pt-6 border-t border-slate-700/70 mt-4">
+                    <a href="projects.html"
+                       class="text-gray-400 hover:text-gray-100 font-semibold text-sm md:text-base link-underline">
+                        &larr; Back to Projects
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-slate-900 bg-opacity-60 backdrop-blur-md text-white text-center py-6">
-        <p>&copy; 2025 Adrian Krieger. All rights reserved.</p>
+    <footer class="bg-slate-950 text-white text-center py-5 mt-10 border-t border-slate-800/80">
+        <p class="text-sm text-gray-400">&copy; 2025 Adrian Krieger. All rights reserved.</p>
     </footer>
 
-    <script>
-        // JavaScript for mobile menu and smooth scrolling is assumed to be appended here.
-    </script>
 </body>
 </html>
