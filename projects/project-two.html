@@ -73,3 +73,230 @@
                         ECSS safety factors
                     </span>
                     <span class="px-3 py-1 bg-slate-800/80 text-themed-green text-xs md:text-sm rounded-full font-medium">
+                        Ti-6Al-4V shaft & PTFE bearings
+                    </span>
+                    <span class="px-3 py-1 bg-slate-800/80 text-themed-green text-xs md:text-sm rounded-full font-medium">
+                        TiNi Frangibolt launch lock
+                    </span>
+                </div>
+
+                <div class="flex flex-wrap justify-center md:justify-end gap-4 text-sm md:text-base">
+                    <a href="assets/documents/Raumfahrzeugentwurf_Gruppe_C02_Muenster_Schacht_Gernhold_Krieger.pdf"
+                       target="_blank"
+                       class="text-themed-green hover:text-emerald-200 font-semibold">
+                        Read full design report (PDF) &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- I. Introduction -->
+            <section id="introduction">
+                <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                    I. Introduction – Mission Objective & Social Value
+                </h2>
+                <div class="space-y-4 text-slate-200 text-base md:text-lg leading-relaxed">
+                    <p>
+                        Modern space telescopes provide critical data for climate monitoring, disaster response,
+                        and astronomy. To collect reliable measurements, the optics must arrive in orbit perfectly
+                        clean and must not be exposed to contamination or stray sunlight during launch.
+                    </p>
+                    <p>
+                        Our project focused on the <span class="font-semibold">opening/closing mechanism (OCM)</span> and the
+                        <span class="font-semibold">Launch-Lock Assembly (LLA)</span> of the telescope’s aperture cover. Together,
+                        these subsystems keep the instrument safely closed under launch loads up to ±3.8&nbsp;kN,
+                        and then open it on command once in orbit. :contentReference[oaicite:1]{index=1}
+                    </p>
+                    <p>
+                        The design therefore needed to:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-200">
+                        <li>Survive launch loads and vibrations while keeping the cover firmly locked.</li>
+                        <li>Open from 0° to 140° and close again within 30&nbsp;s, without releasing any debris.</li>
+                        <li>Meet ECSS structural safety factors and lifetime requirements for repeated ground tests and
+                            in-orbit operations.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- II. Design & Methods -->
+            <section id="design-analysis">
+                <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                    II. Design & Methods – Mechanism Architecture
+                </h2>
+
+                <h3 class="text-xl font-semibold text-themed-green mb-2">
+                    1. Opening/Closing Mechanism (OCM)
+                </h3>
+                <div class="space-y-4 text-slate-200 text-base md:text-lg leading-relaxed">
+                    <p>
+                        The OCM rotates the aperture cover about a fixed hinge. A high-reliability
+                        <span class="font-semibold">phySPACE 19-2 hybrid stepper motor</span> drives a lightweight
+                        <span class="font-semibold">Ti-6Al-4V hollow shaft</span> via a flexible coupling. The shaft is supported
+                        by four PTFE plain bearings arranged as two fixed and two floating supports, which
+                        carry launch loads and accommodate thermal expansion.
+                    </p>
+                    <p>
+                        We sized the shaft using the worst-case bending moment from launch (25.26&nbsp;Nm) and
+                        ECSS safety factors of 1.25 against fracture and 1.1 against yielding. The final geometry
+                        is an 8&nbsp;mm outer-diameter, 6&nbsp;mm inner-diameter hollow shaft, which satisfies both
+                        strength and mass requirements. :contentReference[oaicite:2]{index=2}
+                    </p>
+                    <p>
+                        To size the motor, we:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Computed friction torque from bearing friction and centrifugal forces in the open cover.</li>
+                        <li>Calculated rotational inertia of the cover and shaft to get the required acceleration torque
+                            for a 0–140° motion in 30&nbsp;s.</li>
+                        <li>Applied ECSS-recommended safety margins, then selected a motor with 2.5&nbsp;mNm stall
+                            torque, giving a margin of 1.23 over the required 2.03&nbsp;mNm. :contentReference[oaicite:3]{index=3}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <figure class="bg-slate-900/60 rounded-lg p-3 flex flex-col">
+                        <img src="assets/images/ocm_exploded.png"
+                             alt="Exploded CAD view of the opening/closing mechanism with shaft, bearings and motor coupling."
+                             class="rounded-md mb-3 object-cover">
+                        <figcaption class="text-xs md:text-sm text-slate-400">
+                            Exploded CAD view of the opening/closing mechanism: titanium hollow shaft, PTFE bearings,
+                            flexible coupling, and stepper motor.
+                        </figcaption>
+                    </figure>
+
+                    <figure class="bg-slate-900/60 rounded-lg p-3 flex flex-col">
+                        <img src="assets/images/shaft_fem.png"
+                             alt="FEM visualization of shaft deflection and stress under launch loads."
+                             class="rounded-md mb-3 object-cover">
+                        <figcaption class="text-xs md:text-sm text-slate-400">
+                            FEM verification of shaft stress and deflection under combined launch loads, confirming
+                            margins above ECSS factors of safety.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <h3 class="text-xl font-semibold text-themed-green mt-8 mb-2">
+                    2. Launch-Lock Assembly (LLA)
+                </h3>
+                <div class="space-y-4 text-slate-200 text-base md:text-lg leading-relaxed">
+                    <p>
+                        The LLA prevents any motion of the cover during launch and releases it once the satellite
+                        is safely in orbit. The customer required a <span class="font-semibold">TiNi Aerospace Frangibolt FC2</span>
+                        as the non-pyrotechnic release device.
+                    </p>
+                    <p>
+                        Our design uses a titanium fastener bolt with a calibrated circumferential groove acting as a
+                        <span class="font-semibold">planned fracture section</span>. When the Frangibolt expands, the axial force in the
+                        fastener exceeds the allowable load of this necked section and the bolt shears in a controlled
+                        way. The groove diameter was chosen so that:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>It always breaks under the maximum actuator force of 3781&nbsp;N, and</li>
+                        <li>It still has a safety margin of 1.99 against the maximum structural load of 1900&nbsp;N
+                            transmitted through the locked cover. :contentReference[oaicite:4]{index=4}
+                        </li>
+                    </ul>
+                    <p>
+                        To avoid jamming due to manufacturing tolerances, the bolt is guided by three eccentric pins
+                        that allow small lateral adjustments. Two “kick-springs” help the cover overcome the motor
+                        holding torque immediately after release, while containment housings and a damper ensure
+                        that no fragments are released into space and impact shocks are reduced.
+                    </p>
+                </div>
+            </section>
+
+            <!-- III. Results & Evaluation -->
+            <section id="evaluation">
+                <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                    III. Results & Evaluation – Feasibility & Effectiveness
+                </h2>
+                <div class="space-y-4 text-slate-200 text-base md:text-lg leading-relaxed">
+                    <p>
+                        We evaluated the design through analytical calculations, ECSS-based safety checks, and FEM
+                        simulations of critical components such as the shaft and eye-brackets.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>
+                            <span class="font-semibold">Structural safety:</span> All metallic parts meet or exceed ECSS factors of safety
+                            (≥1.25 for ultimate, ≥1.1 for yield). Shaft stresses remain within allowable limits, and
+                            key fasteners and lugs show adequate margins against both fracture and yielding. :contentReference[oaicite:5]{index=5}
+                        </li>
+                        <li>
+                            <span class="font-semibold">Bearing life & tolerances:</span> PTFE bearings are sized for launch loads and
+                            expected actuation cycles (ground testing plus in-orbit operations), with tolerance stacks
+                            ensuring proper fits over the operating temperature range.
+                        </li>
+                        <li>
+                            <span class="font-semibold">Kinematics & timing:</span> The motor-spring system achieves the required
+                            0°–140° motion within 30&nbsp;s, with sufficient torque margin to overcome friction and
+                            worst-case cold startup conditions.
+                        </li>
+                        <li>
+                            <span class="font-semibold">Safety & reliability:</span> Dual containment for the fractured bolt pieces,
+                            non-pyrotechnic actuation, and passive damping reduce contamination and shock loads on
+                            the telescope structure.
+                        </li>
+                    </ul>
+                    <p>
+                        Overall, the mechanism meets the functional and structural requirements of the course brief
+                        and would be a feasible candidate for a small scientific satellite, subject to further
+                        qualification testing.
+                    </p>
+                </div>
+            </section>
+
+            <!-- IV. My Role -->
+            <section id="contribution">
+                <h2 class="text-2xl md:text-3xl font-bold text-white section-header">
+                    IV. My Role & Contributions
+                </h2>
+                <div class="space-y-4 text-slate-200 text-base md:text-lg leading-relaxed">
+                    <p>
+                        The project was completed in a four-person team; I contributed a substantial share of the
+                        workload in the draft design and analysis phases. :contentReference[oaicite:6]{index=6}  My main responsibilities were:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>
+                            <span class="font-semibold">Shaft & bearing design:</span> Derived launch load cases, computed reaction
+                            forces and bending moments, and sized the Ti-6Al-4V hollow shaft and PTFE bearings to
+                            satisfy ECSS safety margins.
+                        </li>
+                        <li>
+                            <span class="font-semibold">Motor sizing & actuation concept:</span> Developed the torque budget, selected the
+                            phySPACE stepper motor, and defined the motion profile for opening and closing.
+                        </li>
+                        <li>
+                            <span class="font-semibold">Launch-lock mechanics:</span> Assisted in the sizing of the Frangibolt fastener
+                            groove, the kick-spring forces, and the eccentric pin arrangement to manage tolerances.
+                        </li>
+                        <li>
+                            <span class="font-semibold">Analysis & documentation:</span> Performed hand calculations and FEM checks for
+                            critical components and co-authored the “Draft Design” and “Analysis and Verification”
+                            chapters of the report.
+                        </li>
+                    </ul>
+                    <p>
+                        Through this project I gained hands-on experience with spacecraft mechanism design,
+                        ECSS-compliant sizing, and the practical trade-offs between mass, reliability, and manufacturability.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Back link -->
+            <div class="flex justify-center pt-6">
+                <a href="projects.html"
+                   class="text-slate-300 hover:text-slate-100 font-semibold text-sm md:text-base">
+                    &larr; Back to projects
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-slate-900/80 backdrop-blur-md text-white text-center py-5 text-sm">
+    <p>&copy; 2025 Adrian Krieger. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
