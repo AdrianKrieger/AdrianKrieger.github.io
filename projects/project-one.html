@@ -126,9 +126,9 @@
                             Grinding was performed on a C45 steel workpiece using the KUKA LBR iiwa 7 R800 robotic arm and a prototype EOAT. To ensure the final model was robust to real-world factory conditions, images were acquired under varied circumstances:
                         </p>
                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-300">
-                            <li>**Angles:** Four sets of 3D-printed brackets were used to capture images at $30^{\circ}$, $45^{\circ}$, $60^{\circ}$, and $90^{\circ}$ angles.</li>
-                            <li>**Lighting:** Seven unique lux configurations were applied to the $90^{\circ}$ images to test model resilience against variable lighting conditions.</li>
-                            <li>**Hardware:** Three different cameras (Canon EOS 50, Allied Vision, Logitech C920) were used to create three separate datasets for comparison.</li>
+                            <li>Angles: Four sets of 3D-printed brackets were used to capture images at $30^{\circ}$, $45^{\circ}$, $60^{\circ}$, and $90^{\circ}$ angles.</li>
+                            <li>Lighting: Seven unique lux configurations were applied to the $90^{\circ}$ images to test model resilience against variable lighting conditions.</li>
+                            <li>Hardware: Three different cameras (Canon EOS 50, Allied Vision, Logitech C920) were used to create three separate datasets for comparison.</li>
                         </ul>
                     </div>
 
@@ -146,7 +146,7 @@
                             To ensure high data quality, raw images were processed using a custom Python pipeline. This involved automated background cropping via an edge detection algorithm and extending the dataset size by cropping relevant regions up to 24 times per raw image.
                         </p>
                         <p>
-                            For labeling, the highest roughness value ($\mathbf{Rz}$) measured by the tactile device was used to ensure the resulting model was conservative—preferring unnecessary additional grinding over producing a faulty part.
+                            For labeling, the highest roughness value measured by the tactile device was used to ensure the resulting model was conservative—preferring unnecessary additional grinding over producing a faulty part.
                         </p>
                     </div>
                 </div>
