@@ -111,7 +111,7 @@
                     <div class="mt-8 mb-4 text-center">
                         <h3 class="text-xl font-semibold text-white mb-4">Workpiece Condition: Before & After Grinding</h3>
                         <div class="w-full mx-auto max-w-3xl">
-                             
+                             <img src="assets/images/project1_workpiece_progress.jpg" alt="Workpiece surface before and after robotic grinding process" class="w-full h-auto object-cover rounded-md mb-4">
                         </div>
                         <p class="text-sm text-gray-400 mt-2">The workpiece before grinding (left, Rz $\approx 12.7\mu m$) and after 124 iterations (right, Rz $\approx 1.1\mu m$).</p>
                     </div>
@@ -126,16 +126,16 @@
                             Grinding was performed on a C45 steel workpiece using the KUKA LBR iiwa 7 R800 robotic arm and a prototype EOAT. To ensure the final model was robust to real-world factory conditions, images were acquired under varied circumstances:
                         </p>
                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-300">
-                            <li>Angles: Four sets of 3D-printed brackets were used to capture images at $30^{\circ}$, $45^{\circ}$, $60^{\circ}$, and $90^{\circ}$ angles.</li>
-                            <li>Lighting: Seven unique lux configurations were applied to the $90^{\circ}$ images to test model resilience against variable lighting conditions.</li>
-                            <li>Hardware: Three different cameras (Canon EOS 50, Allied Vision, Logitech C920) were used to create three separate datasets for comparison.</li>
+                            <li>**Angles:** Four sets of 3D-printed brackets were used to capture images at $30^{\circ}$, $45^{\circ}$, $60^{\circ}$, and $90^{\circ}$ angles.</li>
+                            <li>**Lighting:** Seven unique lux configurations were applied to the $90^{\circ}$ images to test model resilience against variable lighting conditions.</li>
+                            <li>**Hardware:** Three different cameras (Canon EOS 50, Allied Vision, Logitech C920) were used to create three separate datasets for comparison.</li>
                         </ul>
                     </div>
 
                     <div class="mt-8 mb-4 text-center">
                         <h3 class="text-xl font-semibold text-white mb-4">Experimental Setup for Image Acquisition</h3>
                         <div class="w-full mx-auto max-w-3xl">
-                            
+                            <img src="assets/images/project1_setup_rig.jpg" alt="Photo of the KUKA robot rig, workpiece, and light bar setup" class="w-full h-auto object-cover rounded-md mb-4">
                         </div>
                         <p class="text-sm text-gray-400 mt-2">The experimental rig showing the KUKA arm's EOAT, light bars, and workpiece setup.</p>
                     </div>
@@ -146,7 +146,7 @@
                             To ensure high data quality, raw images were processed using a custom Python pipeline. This involved automated background cropping via an edge detection algorithm and extending the dataset size by cropping relevant regions up to 24 times per raw image.
                         </p>
                         <p>
-                            For labeling, the highest roughness value measured by the tactile device was used to ensure the resulting model was conservative—preferring unnecessary additional grinding over producing a faulty part.
+                            For labeling, the highest roughness value ($\mathbf{Rz}$) measured by the tactile device was used to ensure the resulting model was conservative—preferring unnecessary additional grinding over producing a faulty part.
                         </p>
                     </div>
                 </div>
@@ -165,14 +165,14 @@
                         <div class="w-full lg:w-1/2">
                             <h3 class="text-lg font-semibold text-white mb-4">Metrics Comparison: Baseline vs. VGG16 (Model 8)</h3>
                             <div class="w-full">
-                                
+                                <img src="assets/images/project1_metrics_report.png" alt="Classification report for Model 1 and Model 8" class="w-full h-auto object-cover rounded-md mb-4">
                             </div>
                             <p class="text-sm text-gray-400 mt-2">Model 8 achieved significant improvements across all roughness classes (1-3$\mu m$ through 7+$\mu m$) compared to the FNN baseline.</p>
                         </div>
                         <div class="w-full lg:w-1/2">
                             <h3 class="text-lg font-semibold text-white mb-4">ROC Curves & AUC Evaluation</h3>
                             <div class="w-full">
-                                
+                                <img src="assets/images/project1_roc_curves.png" alt="ROC curves comparing Model 1 and Model 8 performance" class="w-full h-auto object-cover rounded-md mb-4">
                             </div>
                             <p class="text-sm text-gray-400 mt-2">ROC curves showing Model 8's superior performance (Average AUC $\approx 0.97$) compared to the baseline (Average AUC $\approx 0.85$).</p>
                         </div>
