@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrian Krieger - Spacecraft Design</title>
+    <title>Adrian Krieger – Aperture Cover Mechanism & Launch Lock</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0b1120;
+            background-color: #020617;
             color: #e2e8f0;
-            background-image: url('https://images.unsplash.com/photo-1616429532585-f5b2b295c024?q=80&w=1740&auto=format&fit=crop');
+            background-image: url('https://images.unsplash.com/photo-1457364887197-9150188c107b?q=80&w=1800&auto=format&fit=crop');
             background-size: cover;
             background-position: center top;
             background-attachment: fixed;
@@ -19,151 +20,56 @@
         }
         body::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at top, rgba(15,23,42,0.4), rgba(15,23,42,0.9));
             z-index: -1;
         }
-        .nav-link:hover {
-            color: #d1d5db;
-        }
         .card {
-            background-color: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.4), 0 4px 8px -2px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease-in-out;
-            border: 1px solid rgba(148, 163, 184, 0.2);
+            background-color: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(10px);
+            box-shadow:
+                0 18px 45px rgba(0,0,0,0.55),
+                0 0 0 1px rgba(148,163,184,0.25);
+            border-radius: 1rem;
         }
         .section-header {
-            border-bottom: 2px solid #374151;
+            border-bottom: 2px solid rgba(55, 65, 81, 0.9);
             padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         .text-themed-blue { color: #a5b4fc; }
-        .text-themed-green { color: #81e6d9; }
+        .text-themed-green { color: #6ee7b7; }
     </style>
 </head>
 <body class="antialiased">
 
-    <main class="container mx-auto px-6 py-8 md:py-16">
-        <section id="project-two-details" class="py-12 md:py-20 text-center">
-            
-            <p class="text-lg font-medium text-themed-green mb-2">Spacecraft Design Course Project</p>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Spacecraft Conceptual Design for LEO Observation Mission</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10">A system-level feasibility study and design architecture for a Low Earth Orbit (LEO) remote sensing satellite.</p>
-            
-            <div class="card p-8 rounded-xl max-w-5xl mx-auto text-left space-y-12">
-                
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 pb-4">
-                    <span class="px-3 py-1 bg-slate-800 text-themed-green text-sm rounded-full font-medium">Orbital Mechanics</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-green text-sm rounded-full font-medium">Systems Engineering</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-green text-sm rounded-full font-medium">Mass & Power Budgeting</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-green text-sm rounded-full font-medium">CAD Modeling (CATIA)</span>
-                </div>
+<main class="container mx-auto px-6 py-10 md:py-16">
+    <section id="project-two-details" class="py-10 md:py-14 text-center">
+        <!-- Intro / Hero -->
+        <p class="text-base md:text-lg font-medium tracking-wide text-themed-green uppercase mb-2">
+            Spacecraft Mechanisms Design Project
+        </p>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 md:mb-5">
+            Aperture Cover Opening/Closing Mechanism & Launch Lock
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10">
+            Design, analysis, and verification of a motor-driven aperture cover mechanism and a pyrotechnic-free
+            launch lock for the telescope of a scientific satellite, carried out in the
+            <span class="whitespace-nowrap">“Raumfahrzeugentwurf (Konstruktion)”</span> course at Hochschule München. :contentReference[oaicite:0]{index=0}
+        </p>
 
-                <div class="flex flex-wrap justify-center md:justify-start space-x-6">
-                    <a href="assets/documents/spacecraft-design.pdf" target="_blank" class="text-themed-green hover:text-green-300 transition-colors duration-200 font-bold">Read Full Report (PDF) &rarr;</a>
-                    <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">View CAD Models &rarr;</a>
-                </div>
-                
-                
-                <div id="introduction">
-                    <h2 class="text-3xl font-bold text-white section-header">I. Introduction: Mission Objective & Social Value</h2>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            The core objective was to design a complete Low Earth Orbit (LEO) satellite system, from conceptualization to detailed subsystem budgeting, adhering to strict mission performance and cost constraints. The mission required the satellite to carry a complex optical payload for remote sensing and data collection, positioning it as a key tool for environmental monitoring and predictive analysis.
-                        </p>
-                        <p>
-                            The social value of such a mission lies in enabling precise, global-scale data acquisition, which is crucial for modern climate research, disaster response planning, and agricultural optimization. The design process focused heavily on minimizing risk while maximizing data return over a projected five-year lifespan.
-                        </p>
-                    </div>
-                </div>
-
-                <div id="design-analysis">
-                    <h2 class="text-3xl font-bold text-white section-header">II. Design & Analysis: Systems Definition</h2>
-                    
-                    <h3 class="text-xl font-semibold text-themed-green mt-4 mb-2">Vehicle Architecture and Subsystems</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            The conceptual design utilized a nadir-pointing architecture for a Sun-Synchronous Orbit (SSO) at an altitude of 600 km to ensure consistent lighting conditions for the payload. The design centered on a modular bus housing critical subsystems:
-                        </p>
-                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-300">
-                            <li>Propulsion: Defined delta-V requirements for orbit maintenance and end-of-life de-orbit, selecting a low-thrust electric propulsion system for efficiency.</li>
-                            <li>Electrical Power System (EPS): Sized solar panels and Li-ion battery arrays based on worst-case power consumption, ensuring a minimum 15% power margin throughout the mission.</li>
-                            <li>Structural & Thermal: Modeled primary load-bearing structures and designed a passive thermal control system supplemented by strategic heater placement.</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-8 mb-4 text-center">
-                        <h3 class="text-xl font-semibold text-white mb-4">Final Spacecraft CAD Model</h3>
-                        <div class="w-full mx-auto max-w-3xl">
-                            <img src="assets/images/project2_spacecraft_cad.png" alt="3D CAD model of the LEO observation satellite" class="w-full h-auto object-cover rounded-md mb-4">
-                        </div>
-                        <p class="text-sm text-gray-400 mt-2">The final conceptual design rendered in CATIA, showing the deployed solar panels and primary payload.</p>
-                    </div>
-                </div>
-                
-                <div id="evaluation">
-                    <h2 class="text-3xl font-bold text-white section-header">III. Evaluation: Feasibility and Risk Assessment</h2>
-                    
-                    <h3 class="text-xl font-semibold text-themed-green mt-4 mb-2">Mass, Power, and Budget Compliance</h3>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            A comprehensive margin analysis was performed against established industry standards. The preliminary mass budget achieved a 25% margin against the target launch vehicle capability, and the final power budget retained a 17% margin during the eclipse phase.
-                        </p>
-                        <p>
-                            The design successfully passed all required system-level checks in the compliance matrix. A critical risk assessment focused primarily on thermal stress during payload operations and long-term degradation of the battery system in orbit, proposing redundancy in key systems.
-                        </p>
-                    </div>
-                </div>
-                
-                <div id="contribution" class="pt-4">
-                    <h2 class="text-3xl font-bold text-white section-header">IV. My Contribution & Role</h2>
-                    <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>
-                            As a key member of the design team, my primary role was the Mission Analyst and Subsystem Design Lead for structural integrity and electrical power. My contributions included:
-                        </p>
-                        <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
-                            <li>System Sizing: Performing initial sizing calculations for the solar array geometry and battery capacity based on orbital parameters and payload demands.</li>
-                            <li>Structural Design: Developing the preliminary Computer-Aided Design (CAD) model and optimizing the primary load-bearing structure in CATIA.</li>
-                            <li>Budgeting: Maintaining the mass, power, and delta-V budgets and ensuring all margins complied with the mission requirements.</li>
-                            <li>Report Synthesis: Co-authoring the final technical report, focusing on the feasibility and compliance sections of the overall design.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap justify-center space-x-4 pt-8">
-                    <a href="projects.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">← Back to Projects</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-slate-900 bg-opacity-60 backdrop-blur-md text-white text-center py-6">
-        <p>&copy; 2025 Adrian Krieger. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu after clicking a link
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
-
-        // Toggle mobile menu visibility
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
-</body>
-</html>
+        <div class="card p-6 md:p-9 max-w-6xl mx-auto text-left space-y-10">
+            <!-- Tags + Links -->
+            <div class="flex flex-wrap items-center justify-center md:justify-between gap-4">
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3">
+                    <span class="px-3 py-1 bg-slate-800/80 text-themed-green text-xs md:text-sm rounded-full font-medium">
+                        Spacecraft mechanisms
+                    </span>
+                    <span class="px-3 py-1 bg-slate-800/80 text-themed-green text-xs md:text-sm rounded-full font-medium">
+                        Structural & fatigue design
+                    </span>
+                    <span class="px-3 py-1 bg-slate-800/80 text-themed-green text-xs md:text-sm rounded-full font-medium">
+                        ECSS safety factors
+                    </span>
+                    <span class="px-3 py-1 bg-slate-800/80 text-themed-green text-xs md:text-sm rounded-full font-medium">
