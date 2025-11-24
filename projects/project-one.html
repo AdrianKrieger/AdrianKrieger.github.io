@@ -52,8 +52,12 @@
         <section id="project-one-details" class="py-12 md:py-20 text-center">
             
             <p class="text-lg font-medium text-themed-blue mb-2">Bachelor Thesis (Aerospace Engineering)</p>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Deep Learning for Automated Surface Quality Assessment in Robotic Grinding</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10">Developing a robust dataset and evaluating machine learning viability for in-process quality control of metal components.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Deep Learning for Automated Surface Quality Assessment in Robotic Grinding
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-10">
+                Developing a robust dataset and evaluating machine learning viability for in-process quality control of metal components.
+            </p>
             
             <div class="card p-8 rounded-xl max-w-5xl mx-auto text-left space-y-12">
                 
@@ -61,17 +65,22 @@
                     <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Deep Learning (DL)</span>
                     <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">Computer Vision</span>
                     <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">IMRD Structure</span>
-                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">VGG16 & ResNet-18</span>
+                    <span class="px-3 py-1 bg-slate-800 text-themed-blue text-sm rounded-full font-medium">VGG16 &amp; ResNet-18</span>
                 </div>
 
                 <div class="flex flex-wrap justify-center md:justify-start space-x-6">
-                    <a href="assets/documents/cv.pdf" target="_blank" class="text-themed-blue hover:text-blue-300 transition-colors duration-200 font-bold">Read Full Thesis (PDF) &rarr;</a>
-                    <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">View GitHub &rarr;</a>
+                    <!-- from /projects/project-one.html we need to go up one level to reach /assets/... -->
+                    <a href="../assets/documents/cv.pdf" target="_blank" class="text-themed-blue hover:text-blue-300 transition-colors duration-200 font-bold">
+                        Read Full Thesis (PDF) &rarr;
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">
+                        View GitHub &rarr;
+                    </a>
                 </div>
                 
                 
                 <div id="introduction">
-                    <h2 class="text-3xl font-bold text-white section-header">I. Introduction: Social Value & Objective</h2>
+                    <h2 class="text-3xl font-bold text-white section-header">I. Introduction: Social Value &amp; Objective</h2>
                     <div class="text-lg text-gray-300 leading-relaxed space-y-4">
                         <p>
                             Automating the final grinding and finishing step in manufacturing processes is critical due to the rising challenge of finding skilled workers and the overall industry push toward AI and robotics. Current quality control relies on slow, contact-based tactile devices or expensive laser systems, limiting the feasibility of dynamic, in-process measurements.
@@ -82,25 +91,29 @@
                     </div>
                     
                     <div class="mt-8 mb-4 text-center">
-                        <h3 class="text-xl font-semibold text-white mb-4">Workpiece Condition: Before & After Grinding</h3>
+                        <h3 class="text-xl font-semibold text-white mb-4">Workpiece Condition: Before &amp; After Grinding</h3>
                         <div class="w-full mx-auto max-w-3xl">
-                             <img src="../assets/images/project1_workpiece_progress.png" alt="Workpiece surface before and after robotic grinding process" class="w-full h-auto object-cover rounded-md mb-4">
+                             <img src="../assets/images/project1_workpiece_progress.png"
+                                  alt="Workpiece surface before and after robotic grinding process"
+                                  class="w-full h-auto object-cover rounded-md mb-4">
                         </div>
-                        <p class="text-sm text-gray-400 mt-2">The workpiece before grinding (left, Rz $\approx 12.7\mu m$) and after 124 iterations (right, Rz $\approx 1.1\mu m$).</p>
+                        <p class="text-sm text-gray-400 mt-2">
+                            The workpiece before grinding (left, Rz ≈ 12.7&nbsp;μm) and after 124 iterations (right, Rz ≈ 1.1&nbsp;μm).
+                        </p>
                     </div>
                 </div>
 
                 <div id="methods">
-                    <h2 class="text-3xl font-bold text-white section-header">II. Methods: Data Acquisition & Processing</h2>
+                    <h2 class="text-3xl font-bold text-white section-header">II. Methods: Data Acquisition &amp; Processing</h2>
                     
-                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Experimental Setup & Acquisition</h3>
+                    <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Experimental Setup &amp; Acquisition</h3>
                     <div class="text-lg text-gray-300 leading-relaxed space-y-4">
                         <p>
                             Grinding was performed on a C45 steel workpiece using the KUKA LBR iiwa 7 R800 robotic arm and a prototype EOAT. To ensure the final model was robust to real-world factory conditions, images were acquired under varied circumstances:
                         </p>
                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-300">
-                            <li>Angles: Four sets of 3D-printed brackets were used to capture images at $30^{\circ}$, $45^{\circ}$, $60^{\circ}$, and $90^{\circ}$ angles.</li>
-                            <li>Lighting: Seven unique lux configurations were applied to the $90^{\circ}$ images to test model resilience against variable lighting conditions.</li>
+                            <li>Angles: Four sets of 3D-printed brackets were used to capture images at 30°, 45°, 60°, and 90° angles.</li>
+                            <li>Lighting: Seven unique lux configurations were applied to the 90° images to test model resilience against variable lighting conditions.</li>
                             <li>Hardware: Three different cameras (Canon EOS 50, Allied Vision, Logitech C920) were used to create three separate datasets for comparison.</li>
                         </ul>
                     </div>
@@ -108,9 +121,13 @@
                     <div class="mt-8 mb-4 text-center">
                         <h3 class="text-xl font-semibold text-white mb-4">Experimental Setup for Image Acquisition</h3>
                         <div class="w-full mx-auto max-w-3xl">
-                            <img src="../assets/images/project1_setup_rig.png" alt="Photo of the KUKA robot rig, workpiece, and light bar setup" class="w-full h-auto object-cover rounded-md mb-4">
+                            <img src="../assets/images/project1_setup_rig.png"
+                                 alt="Photo of the KUKA robot rig, workpiece, and light bar setup"
+                                 class="w-full h-auto object-cover rounded-md mb-4">
                         </div>
-                        <p class="text-sm text-gray-400 mt-2">The experimental rig showing the KUKA arm's EOAT, light bars, and workpiece setup.</p>
+                        <p class="text-sm text-gray-400 mt-2">
+                            The experimental rig showing the KUKA arm's EOAT, light bars, and workpiece setup.
+                        </p>
                     </div>
                     
                     <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-2">Data Processing Pipeline</h3>
@@ -119,13 +136,13 @@
                             To ensure high data quality, raw images were processed using a custom Python pipeline. This involved automated background cropping via an edge detection algorithm and extending the dataset size by cropping relevant regions up to 24 times per raw image.
                         </p>
                         <p>
-                            For labeling, the highest roughness value ($\mathbf{Rz}$) measured by the tactile device was used to ensure the resulting model was conservative—preferring unnecessary additional grinding over producing a faulty part.
+                            For labeling, the highest roughness value (<strong>Rz</strong>) measured by the tactile device was used to ensure the resulting model was conservative—preferring unnecessary additional grinding over producing a faulty part.
                         </p>
                     </div>
                 </div>
                 
                 <div id="results">
-                    <h2 class="text-3xl font-bold text-white section-header">III. Results & Evaluation</h2>
+                    <h2 class="text-3xl font-bold text-white section-header">III. Results &amp; Evaluation</h2>
                     
                     <h3 class="text-xl font-semibold text-themed-blue mt-4 mb-4">Classification Model Performance</h3>
                     <div class="text-lg text-gray-300 leading-relaxed space-y-4">
@@ -138,29 +155,37 @@
                         <div class="w-full lg:w-1/2">
                             <h3 class="text-lg font-semibold text-white mb-4">Metrics Comparison: Baseline vs. VGG16 (Model 8)</h3>
                             <div class="w-full">
-                                <img src="../assets/images/project1_metrics_report.png" alt="Classification report for Model 1 and Model 8" class="w-full h-auto object-cover rounded-md mb-4">
+                                <img src="../assets/images/project1_metrics_report.png"
+                                     alt="Classification report for Model 1 and Model 8"
+                                     class="w-full h-auto object-cover rounded-md mb-4">
                             </div>
-                            <p class="text-sm text-gray-400 mt-2">Model 8 achieved significant improvements across all roughness classes (1-3$\mu m$ through 7+$\mu m$) compared to the FNN baseline.</p>
+                            <p class="text-sm text-gray-400 mt-2">
+                                Model 8 achieved significant improvements across all roughness classes (1–3&nbsp;μm through 7+&nbsp;μm) compared to the FNN baseline.
+                            </p>
                         </div>
                         <div class="w-full lg:w-1/2">
-                            <h3 class="text-lg font-semibold text-white mb-4">ROC Curves & AUC Evaluation</h3>
+                            <h3 class="text-lg font-semibold text-white mb-4">ROC Curves &amp; AUC Evaluation</h3>
                             <div class="w-full">
-                                <img src="../assets/images/project1_roc_curves.png" alt="ROC curves comparing Model 1 and Model 8 performance" class="w-full h-auto object-cover rounded-md mb-4">
+                                <img src="../assets/images/project1_roc_curves.png"
+                                     alt="ROC curves comparing Model 1 and Model 8 performance"
+                                     class="w-full h-auto object-cover rounded-md mb-4">
                             </div>
-                            <p class="text-sm text-gray-400 mt-2">ROC curves showing Model 8's superior performance (Average AUC $\approx 0.97$) compared to the baseline (Average AUC $\approx 0.85$).</p>
+                            <p class="text-sm text-gray-400 mt-2">
+                                ROC curves showing Model 8's superior performance (Average AUC ≈ 0.97) compared to the baseline (Average AUC ≈ 0.85).
+                            </p>
                         </div>
                     </div>
                     
                     <h3 class="text-xl font-semibold text-themed-blue mt-8 mb-4">Key Evaluation Findings</h3>
                     <ul class="list-disc list-inside text-lg space-y-2 pl-4 text-gray-300">
                         <li>The best model (VGG16 Model 8) achieved a test accuracy of 82.50%, demonstrating the method's feasibility.</li>
-                        <li>A VGG16 regression model achieved a high-precision Mean Absolute Error (MAE) of $0.3328\mu m$ in the $1\mu m-2\mu m$ roughness range.</li>
-                        <li>The test accuracy for the $60^{\circ}$ angled images was surprisingly high at $74.00\%$, suggesting viability for applications where $90^{\circ}$ camera access is physically impossible.</li>
+                        <li>A VGG16 regression model achieved a high-precision Mean Absolute Error (MAE) of 0.3328&nbsp;μm in the 1–2&nbsp;μm roughness range.</li>
+                        <li>The test accuracy for the 60° angled images was surprisingly high at 74.00%, suggesting viability for applications where 90° camera access is physically impossible.</li>
                     </ul>
                 </div>
                 
                 <div id="contribution" class="pt-4">
-                    <h2 class="text-3xl font-bold text-white section-header">IV. My Contribution & Role</h2>
+                    <h2 class="text-3xl font-bold text-white section-header">IV. My Contribution &amp; Role</h2>
                     <div class="text-lg text-gray-300 leading-relaxed space-y-4">
                         <p>
                             As the sole researcher for this Bachelor Thesis, my role involved the design, implementation, execution, and analysis of the entire project:
@@ -175,7 +200,9 @@
                 </div>
 
                 <div class="flex flex-wrap justify-center space-x-4 pt-8">
-                    <a href="projects.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">← Back to Projects</a>
+                    <a href="projects.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-200 font-bold">
+                        ← Back to Projects
+                    </a>
                 </div>
             </div>
         </section>
@@ -185,24 +212,6 @@
         <p>&copy; 2025 Adrian Krieger. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu after clicking a link
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
-
-        // Toggle mobile menu visibility
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
+
