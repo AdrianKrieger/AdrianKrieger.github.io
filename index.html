@@ -120,16 +120,23 @@
                 <div class="w-full md:w-1/2 p-6 md:p-10 rounded-xl card text-center">
                     <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6">Resume</h2>
                     
-                    <div class="w-full h-[500px] mb-6 rounded-lg overflow-hidden border-2 border-slate-700 bg-slate-800">
+                    <!-- Clickable CV preview -->
+                    <div id="cv-preview" class="w-full h-[500px] mb-6 rounded-lg overflow-hidden border-2 border-slate-700 bg-slate-800 cursor-pointer relative group">
                         <iframe 
                             src="assets/documents/cv.pdf" 
-                            class="w-full h-full" 
+                            class="w-full h-full pointer-events-none" 
                             title="CV Preview">
                             <p class="text-white p-4">
                                 Your browser does not support PDF previews. 
                                 <a href="assets/documents/cv.pdf" class="text-themed-blue underline">Download it here</a>.
                             </p>
                         </iframe>
+                        <!-- Overlay hint -->
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+                            <span class="text-sm md:text-base text-gray-100 px-3 py-2 bg-black/60 rounded-lg border border-gray-500">
+                                Click to view full-screen
+                            </span>
+                        </div>
                     </div>
 
                     <a href="assets/documents/cv.pdf" download="Adrian_Krieger_Resume.pdf" class="inline-flex items-center px-6 py-3 bg-themed-purple/20 text-themed-purple hover:bg-themed-purple/30 border border-themed-purple/50 rounded-lg transition-colors duration-200 font-bold">
@@ -174,6 +181,20 @@
         <p>&copy; 2025 Adrian Krieger. All rights reserved.</p>
     </footer>
 
+    <!-- Fullscreen CV Modal -->
+    <div id="cv-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
+        <div class="relative w-11/12 max-w-5xl h-[90vh] bg-slate-900 rounded-xl border border-slate-700 overflow-hidden">
+            <button id="cv-modal-close" class="absolute top-3 right-3 bg-black/60 hover:bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none">
+                &times;
+            </button>
+            <iframe 
+                src="assets/documents/cv.pdf" 
+                class="w-full h-full" 
+                title="CV Fullscreen View">
+            </iframe>
+        </div>
+    </div>
+
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -192,6 +213,39 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+
+        // CV fullscreen modal logic
+        const cvPreview = document.getElementById('cv-preview');
+        const cvModal = document.getElementById('cv-modal');
+        const cvModalClose = document.getElementById('cv-modal-close');
+
+        if (cvPreview && cvModal && cvModalClose) {
+            cvPreview.addEventListener('click', () => {
+                cvModal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            });
+
+            cvModalClose.addEventListener('click', () => {
+                cvModal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+
+            // Close when clicking on the dark background
+            cvModal.addEventListener('click', (e) => {
+                if (e.target === cvModal) {
+                    cvModal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }
+            });
+
+            // Optional: ESC key closes modal
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !cvModal.classList.contains('hidden')) {
+                    cvModal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }
+            });
+        }
     </script>
 </body>
 </html>
